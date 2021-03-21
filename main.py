@@ -6,19 +6,23 @@ second_val = random.choice([True,False])
 operators = ["AND","OR","XOR","NOT"]
 rand_operator = random.choice(operators)
 
-print(first_val,rand_operator,second_val)
 if rand_operator == "AND":
+  print(first_val,rand_operator,second_val)
   actual_result = first_val and second_val
 elif rand_operator == "OR":
+  print(first_val,rand_operator,second_val)
   actual_result = first_val or second_val
 elif rand_operator == "XOR":
+  print(first_val,rand_operator,second_val)
   actual_result = first_val ^ second_val
 elif rand_operator == "NOT":
-  actual_result = not second_val
+  print(rand_operator,first_val)
+  actual_result = not first_val
 
-user_answer = input("Enter your answer\n\t--> ")
+user_answer = input("Enter your answer\n\t--> ").title()
 
 if user_answer == str(actual_result):
-  print("YAY")
+  print("Correct!")
 else:
-  print("NO")
+  print("Incorrect")
+  print(f"The answer was: {actual_result}")
