@@ -2,6 +2,7 @@ from VividHues import Clr
 import random
 #====================
 def generate_question():
+  global score
   first_val = random.choice([False,True])
   second_val = random.choice([False,True])
   operators = ["AND","OR","XOR","NOT"]
@@ -30,10 +31,19 @@ def generate_question():
   
   if user_answer == str(actual_result):
     print(f"{Clr.BOLD + Clr.GREEN}Correct!{Clr.RESET}")
+    score += 1
   else:
     print(f"{Clr.BOLD + Clr.RED}Incorrect!{Clr.RESET}")
     print(f"{Clr.RED}The answer was: {actual_result}{Clr.RESET}")
+#====================
 # MAIN PROGRAM
+score = 0
+
 print(f"{Clr.BOLD + Clr.UNDERLINE + Clr.CYAN}<-- Boolean Expression Quiz -->{Clr.RESET}")
-for _ in range(5):
+
+quantity = 5
+for _ in range(quantity):
   generate_question()
+  print(Clr.BLACK,"-" * 30,Clr.RESET)
+
+print(f"{Clr.BOLD + Clr.ORANGE}Your score is {score}/{quantity}!{Clr.RESET}")
